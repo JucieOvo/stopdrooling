@@ -1,0 +1,42 @@
+- insert:
+    - id: stopdrooling
+      name: stopdrooling
+      config:
+        remove: paragraph
+        maxHitsPerBlock: 1
+        phrases:
+          - 'ok.'
+          - 'writing.'
+          - 'let me write.'
+          - 'go.'
+          - 'let me output.'
+          - 'emitting.'
+          - 'ok — emitting.'
+          - 'now.'
+          - '好。'
+          - '（写）'
+          - 'ok — emitting now.'
+          - '写。'
+          - 'let me emit.'
+          - 'ok, writing.'
+          - 'ok. writing.'
+          - 'done.'
+          - 'ok — producing.'
+          - 'ok — writing.'
+          - 'producing.'
+          - 'ok. emitting.'
+          - "i'll write the tool call now."
+          - 'emitting the tool call.'
+          - 'ok — producing the tool call.'
+          - 'ok — producing now.'
+          - 'ok, emitting.'
+          - 'ok, emitting the tool call.'
+          - 'let me write the file.'
+          - 'let me output it.'
+          - 'ok, producing the tool call.'
+          - 'ok. writing the tool call.'
+          - 'let me output the tool call now.'
+          - 'writing the tool call.'
+          - 'ok. emitting the tool call.'
+          - 'writing the tool call now.'
+          - 'let me output the tool call.'

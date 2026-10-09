@@ -1,0 +1,4 @@
+# Replaces .gitignore for pnpm pack. lib/ stays packable even though .gitignore ignores it.
+node_modules
+tests
+*.tsbuildinfo

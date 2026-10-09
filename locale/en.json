@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "stopdrooling",
+    "description": "Deletes standalone loop-phrase lines in the last 25% of reasoning sent to the model. The session log keeps the original text, and the web UI marks those lines red."
+  }
+}

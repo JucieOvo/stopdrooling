@@ -1,0 +1,62 @@
+{
+  "name": "stopdrooling",
+  "version": "0.3.0",
+  "description": "stopdrooling: remove standalone loop-phrase lines from reasoning in the outgoing DeepSeek Harness request. The session log is kept, and the web UI marks those lines red.",
+  "author": "JucieOvo",
+  "type": "module",
+  "main": "./lib/index.mjs",
+  "exports": {
+    ".": "./lib/index.mjs",
+    "./matcher": "./lib/matcher.mjs",
+    "./rewrite": "./lib/rewrite.mjs",
+    "./client": "./client/client.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "lib",
+    "src",
+    "client",
+    "locale",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": "^22.19.0 || >=24"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-ui-chat",
+        "@deepseek-ai/dsh-client-locale"
+      ]
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "*",
+    "@deepseek-ai/dsh-llm": "*",
+    "@deepseek-ai/schemastery": "*"
+  },
+  "scripts": {
+    "build": "tsdown --config tsdown.config.ts --config-loader tsx",
+    "prepack": "tsdown --config tsdown.config.ts --config-loader tsx",
+    "test": "vitest run --config vitest.config.ts"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "link:../vendor/cordis",
+    "@deepseek-ai/schemastery": "link:../vendor/schemastery",
+    "tsdown": "0.22.2",
+    "tsx": "^4.22.4",
+    "vitest": "4.1.8",
+    "typescript": "6.0.3",
+    "@deepseek-ai/dsh-llm": "link:../packages/llm/llm",
+    "@deepseek-ai/dsh-llm-deepseek": "link:../packages/llm/llm-deepseek"
+  }
+}
